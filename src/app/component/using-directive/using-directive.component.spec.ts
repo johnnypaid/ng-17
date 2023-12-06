@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BookItemComponent } from './book-item.component';
+import { UsingDirectiveComponent } from './using-directive.component';
 
-describe('BookItemComponent', () => {
-  let component: BookItemComponent;
-  let fixture: ComponentFixture<BookItemComponent>;
+describe('UsingDirectiveComponent', () => {
+  let component: UsingDirectiveComponent;
+  let fixture: ComponentFixture<UsingDirectiveComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BookItemComponent]
+      imports: [UsingDirectiveComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(BookItemComponent);
+    fixture = TestBed.createComponent(UsingDirectiveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

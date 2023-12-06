@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { AppComponent } from './app.component';
-import { BooksComponent } from './component/books/books.component';
+import { UsingDirectiveComponent } from './component/using-directive/using-directive.component';
 
 export const routes: Routes = [
   { path: '', component: AppComponent },
@@ -12,7 +12,7 @@ export const routes: Routes = [
   },
   {
     path: 'third-route',
-    component: BooksComponent,
+    component: UsingDirectiveComponent,
     data: { animation: 'openClosePage' },
   },
 ];

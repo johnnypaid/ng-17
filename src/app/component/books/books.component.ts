@@ -1,7 +1,11 @@
-import { Component, Input, OnInit, SimpleChange } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  Input,
+  SimpleChange,
+} from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
-import { BookItemComponent } from './book-item/book-item.component';
-import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -11,7 +15,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   standalone: true,
   imports: [
     HeaderComponent,
-    BookItemComponent,
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
@@ -32,22 +35,21 @@ export class BooksComponent {
     'display type',
   ];
 
+  constructor(private cd: ChangeDetectorRef) {}
+
   ngOnChanges(changes: SimpleChange) {
-    this.dataSource = new MatTableDataSource(this.data);
+    this.dataSource = this.data;
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
 
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
     if (filterValue === '') {
-      window.location.reload();
+      this.data = this.dataSource;
     } else {
       this.data = this.data.filter(
         (el: { id: any }) => el.id === filterValue.trim()
       );
     }
-    console.log(this.data);
   }
 }
