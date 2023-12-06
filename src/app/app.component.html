@@ -1,1 +1,9 @@
-<div class="main"></div>
+<div class="main" [class.main-img-bg]="showBgImg">
+  <div *ngIf="showBtn" class="main-button">
+    <app-button url="/dashboard" name="Proceed" />
+  </div>
+
+  <div [@routeAnimations]="getRouteAnimationData()">
+    <router-outlet></router-outlet>
+  </div>
+</div>

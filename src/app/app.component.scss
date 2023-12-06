@@ -1,5 +1,17 @@
 .main {
-  background-image: url("../assets/image/background.jpg");
+  background-position: center;
+  background-size: cover;
   height: 100%;
-  opacity: 0.5;
+  text-align: center;
+  &-button {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+  }
+  &-img {
+    &-bg {
+      background-image: url("../assets/image/bg-image.jpg");
+    }
+  }
 }
